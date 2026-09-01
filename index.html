@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para la construcción en Chile — Clase #1 · Kango × CChC</title>
+<meta name="description" content="Resumen de la Clase #1 del programa de formación en Inteligencia Artificial para el sector construcción. Kango × CChC.">
+<link rel="canonical" href="https://kangocchc-1.vercel.app/">
+<link rel="icon" type="image/png" href="public/img/logo-kango.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="IA para la construcción en Chile — Clase #1">
+<meta property="og:description" content="Resumen de la Clase #1: motivación, conceptos clave, casos reales del rubro y 5 pasos para partir con IA en tu empresa. Kango × CChC.">
+<meta property="og:url" content="https://kangocchc-1.vercel.app/">
+<meta property="og:image" content="https://kangocchc-1.vercel.app/public/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kangocchc-1.vercel.app/public/og.png">
+
+<!-- Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+<style>
+:root{
+  --bg:#FAFAFA;
+  --ink:#0a0f2b;
+  --red:#C0001A;
+  --ink-60:rgba(10,15,43,.68);
+  --ink-40:rgba(10,15,43,.58);
+  --line:rgba(10,15,43,.12);
+  --card:#ffffff;
+  --green:#0f6b40;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+section{scroll-margin-top:118px}
+
+/* ---------- chips ---------- */
+.chip{
+  display:inline-block;max-width:100%;
+  font-size:16px;font-weight:600;line-height:1.35;
+  padding:6px 12px;border-radius:14px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink-60);
+}
+.chip--red{border-color:rgba(192,0,26,.3);background:rgba(192,0,26,.06);color:var(--red)}
+.cite{
+  display:inline-block;max-width:100%;
+  font-size:16px;font-weight:500;line-height:1.35;
+  padding:4px 10px;border-radius:12px;
+  border:1px solid var(--line);background:var(--bg);color:var(--ink-40);
+}
+
+/* ---------- header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:50;height:56px;
+  background:rgba(250,250,250,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.hdr .wrap{height:56px;display:flex;align-items:center;justify-content:space-between}
+.hdr img{height:30px;width:auto}
+.hdr .cite{white-space:nowrap}
+
+/* ---------- hero ---------- */
+.hero{padding:44px 0 36px;text-align:left}
+.hero h1{font-size:clamp(34px,8vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.06;margin:14px 0 10px}
+.hero .sub{font-size:18px;color:var(--ink-60);max-width:34em}
+.speakers{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+.speaker{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 16px 10px 10px;flex:1 1 260px;min-width:0}
+.speaker img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.speaker b{display:block;font-size:16px;font-weight:700}
+.speaker span{display:block;font-size:16px;color:var(--ink-60)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:12px 26px;border-radius:12px;
+  font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;
+  border:1px solid transparent;
+}
+.btn--red{background:var(--red);color:#fff}
+.btn--ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+.hero .btn{margin-top:26px}
+
+/* ---------- agenda nav ---------- */
+.agenda{
+  position:sticky;top:56px;z-index:40;
+  background:rgba(250,250,250,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.agenda-scroll{display:flex;gap:8px;overflow-x:auto;padding:10px 20px;max-width:960px;margin:0 auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.agenda-scroll::-webkit-scrollbar{display:none}
+.agenda a{
+  flex:none;display:inline-flex;align-items:center;gap:7px;
+  min-height:40px;padding:8px 14px;border-radius:999px;
+  font-size:16px;font-weight:600;text-decoration:none;white-space:nowrap;
+  border:1px solid var(--line);background:var(--card);color:var(--ink-60);
+}
+.agenda a b{font-weight:800;color:var(--ink-40);font-size:16px}
+.agenda a.on{background:var(--red);border-color:var(--red);color:#fff}
+.agenda a.on b{color:#fff}
+
+/* ---------- sections ---------- */
+.sec{padding:52px 0 8px}
+.sec-head{margin-bottom:26px}
+.sec-head .kicker{font-size:16px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em}
+.sec-head h2{font-size:clamp(27px,6vw,38px);font-weight:800;letter-spacing:-.015em;line-height:1.12;margin-top:6px}
+.sec-head p{margin-top:10px;color:var(--ink-60);font-size:18px;max-width:38em}
+.grid{display:grid;gap:14px}
+@media(min-width:680px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card h3{font-size:18px;font-weight:700;line-height:1.25}
+.card p{font-size:16px;color:var(--ink-60);margin-top:6px}
+.stat{font-size:clamp(34px,7vw,44px);font-weight:800;letter-spacing:-.02em;color:var(--red);line-height:1}
+.stat--ink{color:var(--ink)}
+.stat-label{font-size:16px;color:var(--ink-60);margin-top:6px;line-height:1.4}
+.card .cite{margin-top:14px}
+
+/* ---------- bar chart ---------- */
+.chart{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:14px}
+.chart h3{font-size:18px;font-weight:700}
+.chart .chart-sub{font-size:16px;color:var(--ink-60);margin:4px 0 16px}
+.bar-row{display:grid;grid-template-columns:96px 1fr 56px;align-items:center;gap:10px;margin-top:9px}
+.bar-row .b-name{font-size:16px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .b-track{display:block;height:16px;background:rgba(10,15,43,.07);border-radius:999px;overflow:hidden}
+.bar-row .b-fill{display:block;height:16px;border-radius:999px;background:var(--ink-40)}
+.bar-row:first-of-type .b-fill{background:var(--red)}
+.bar-row .b-val{font-size:16px;font-weight:700;text-align:right}
+.chart .cite{margin-top:16px}
+
+/* ---------- mitos ---------- */
+.myth-pair{display:grid;gap:10px;margin-top:14px}
+@media(min-width:680px){.myth-pair{grid-template-columns:1fr 24px 1fr;align-items:stretch}}
+.myth,.truth{border-radius:var(--radius);padding:18px;border:1px solid}
+.myth{background:rgba(192,0,26,.05);border-color:rgba(192,0,26,.18)}
+.truth{background:rgba(15,107,64,.05);border-color:rgba(15,107,64,.2)}
+.myth b,.truth b{display:block;font-size:17px;line-height:1.3}
+.myth b{color:var(--red)}
+.truth b{color:var(--green)}
+.myth p,.truth p{font-size:16px;color:var(--ink-60);margin-top:5px}
+.myth-arrow{display:flex;align-items:center;justify-content:center;color:var(--ink-40);font-size:20px;font-weight:700}
+@media(max-width:679px){.myth-arrow{transform:rotate(90deg)}}
+
+/* ---------- tabla chatbot vs agente ---------- */
+.vs{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+.vs-head{display:grid;grid-template-columns:1fr 1fr}
+.vs-head div{padding:14px 16px;font-weight:800;font-size:17px}
+.vs-head div:first-child{background:rgba(10,15,43,.05)}
+.vs-head div:last-child{background:var(--red);color:#fff}
+.vs-head span{display:block;font-size:16px;font-weight:500;opacity:.95}
+.vs-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.vs-row div{padding:13px 16px;font-size:16px}
+.vs-row div:first-child{color:var(--ink-60)}
+.vs-row div:last-child{border-left:1px solid var(--line);font-weight:500}
+.vs-note{border-top:1px solid var(--line);padding:14px 16px;font-size:16px;background:rgba(10,15,43,.03);color:var(--ink-60)}
+
+/* ---------- prompting ---------- */
+.formula{display:grid;gap:10px;margin-top:14px}
+@media(min-width:680px){.formula{grid-template-columns:repeat(4,1fr)}}
+.f-part{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.f-part b{font-size:16px;letter-spacing:.08em;color:var(--red)}
+.f-part span{display:block;font-size:16px;font-weight:600;margin-top:2px}
+.f-part p{font-size:16px;color:var(--ink-60);margin-top:6px;font-style:italic}
+.prompt-box{background:var(--ink);color:#f5f5f5;border-radius:var(--radius);padding:20px;margin-top:14px}
+.prompt-box pre{white-space:pre-wrap;font-family:'Inter',Helvetica,sans-serif;font-size:16px;line-height:1.55}
+.prompt-box .btn{margin-top:16px;background:#fff;color:var(--ink);font-size:16px}
+.copy-ok{display:none;margin-top:10px;font-size:16px;color:#7ee2ae;font-weight:600}
+
+/* ---------- casos ---------- */
+.case{display:flex;flex-direction:column}
+.case .chip{align-self:flex-start;margin-bottom:12px}
+.case ul{list-style:none;margin-top:10px}
+.case li{font-size:16px;color:var(--ink-60);padding-left:18px;position:relative;margin-top:7px}
+.case li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--red)}
+.case .cite{margin-top:auto;padding-top:14px;align-self:flex-start}
+
+/* ---------- acordeón ---------- */
+.acc{margin-top:14px;display:grid;gap:10px}
+.acc details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.acc summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;
+  min-height:56px;padding:14px 18px;font-weight:700;font-size:17px;
+}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .n{flex:none;width:34px;height:34px;border-radius:10px;background:rgba(192,0,26,.08);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
+.acc summary .caret{margin-left:auto;color:var(--ink-40);transition:transform .2s;font-size:16px}
+.acc details[open] .caret{transform:rotate(180deg)}
+.acc .acc-body{padding:0 18px 18px 66px}
+.acc .acc-body p{font-size:16px;margin-top:8px}
+.acc .acc-body .q{font-weight:600}
+.acc .acc-body .tip{color:var(--ink-60)}
+.acc .acc-body .tip b{color:var(--red);font-weight:700}
+@media(max-width:520px){.acc .acc-body{padding-left:18px}}
+
+/* ---------- toolbox ---------- */
+.tool{display:flex;flex-direction:column}
+.tool h3{font-size:18px}
+.tool .tag{font-size:16px;color:var(--ink-40);margin-top:2px}
+.tool p{flex:1}
+.tool a{margin-top:12px;font-size:16px;font-weight:700;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;min-height:32px}
+.doors{display:grid;gap:14px;margin-top:14px}
+@media(min-width:680px){.doors{grid-template-columns:1fr 1fr}}
+.door{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.door img{height:44px;width:auto;margin-bottom:14px;object-fit:contain}
+.door h3{font-size:20px;font-weight:800}
+.door .chip{margin-top:8px}
+.door p{font-size:16px;color:var(--ink-60);margin-top:10px}
+.door a{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;font-weight:700;color:var(--red);text-decoration:none;font-size:16px}
+.big-quote{
+  margin-top:26px;background:var(--ink);color:#fff;border-radius:var(--radius);
+  padding:28px 24px;font-size:clamp(20px,4.5vw,26px);font-weight:700;line-height:1.3;letter-spacing:-.01em;
+}
+.big-quote span{color:#ff8fa0}
+
+/* ---------- cierre ---------- */
+.close-quote{font-size:clamp(24px,5.5vw,34px);font-weight:800;letter-spacing:-.015em;line-height:1.18;max-width:22em}
+.close-quote em{font-style:normal;color:var(--red)}
+.close-sub{margin-top:12px;color:var(--ink-60);font-size:18px;max-width:36em}
+.next-card{margin-top:24px;border-left:4px solid var(--red)}
+.next-card .chip--red{margin-bottom:10px}
+form{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+form h3{font-size:20px;font-weight:800}
+form .hint{font-size:16px;color:var(--ink-60);margin-top:4px}
+.fields{display:grid;gap:12px;margin-top:18px}
+@media(min-width:680px){.fields{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:16px;font-weight:600}
+label span{display:block;margin-bottom:6px}
+input{
+  width:100%;min-height:48px;padding:12px 14px;font-size:16px;font-family:inherit;
+  border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);
+}
+input:focus{outline:2px solid var(--red);outline-offset:1px;border-color:transparent}
+form .btn{width:100%;margin-top:16px}
+.form-ok{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(15,107,64,.08);border:1px solid rgba(15,107,64,.25);color:var(--green);font-weight:700;font-size:16px}
+.form-err{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(192,0,26,.06);border:1px solid rgba(192,0,26,.25);color:var(--red);font-weight:600;font-size:16px}
+.alt-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.alt-actions .btn{flex:1 1 220px}
+
+/* ---------- footer ---------- */
+footer{margin-top:56px;border-top:1px solid var(--line);padding:32px 0 44px}
+footer img{height:26px;width:auto;margin-bottom:12px}
+footer p{font-size:16px;color:var(--ink-60);max-width:36em}
+footer .links{display:flex;gap:18px;margin-top:12px;font-size:16px;font-weight:600}
+footer a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- 0. Header -->
+<header class="hdr">
+  <div class="wrap">
+    <img src="public/img/logo-kango.png" alt="Kango">
+    <span class="cite">CChC · Clase #1 · 1 sep 2026</span>
+  </div>
+</header>
+
+<!-- 1. Hero -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <span class="chip chip--red">Clase #1 - IA en simple: tu punto de partida</span>
+    <h1>IA para la construcción en Chile</h1>
+    <p class="sub">Programa de formación en Inteligencia Artificial para el sector construcción</p>
+    <div class="speakers">
+      <div class="speaker">
+        <img src="public/img/felipe.jpg" alt="Felipe Rubilar">
+        <div><b>Felipe Rubilar</b><span>Co-Fundador · Kango</span></div>
+      </div>
+      <div class="speaker">
+        <img src="public/img/gabriel.jpg" alt="Gabriel Jordán">
+        <div><b>Gabriel Jordán</b><span>Co-Fundador · Kango</span></div>
+      </div>
+    </div>
+    <a class="btn btn--red" href="#cierre">Quiero seguir aprendiendo</a>
+  </div>
+</section>
+
+<!-- 2. Agenda -->
+<nav class="agenda" aria-label="Agenda de la clase">
+  <div class="agenda-scroll">
+    <a href="#motivacion" data-sec="motivacion"><b>01</b>Motivación</a>
+    <a href="#desmitificando" data-sec="desmitificando"><b>02</b>Desmitificando</a>
+    <a href="#construccion" data-sec="construccion"><b>03</b>IA en Construcción</a>
+    <a href="#impacto" data-sec="impacto"><b>04</b>Impacto en tu empresa</a>
+    <a href="#toolbox" data-sec="toolbox"><b>05</b>Toolbox</a>
+    <a href="#cierre" data-sec="cierre"><b>06</b>Próxima clase</a>
+  </div>
+</nav>
+
+<!-- 3. §1 Motivación -->
+<section class="sec" id="motivacion">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">01 · Motivación</span>
+      <h2>La construcción no puede seguir esperando</h2>
+      <p>Los números que abrieron la clase: una industria gigante, con productividad estancada, frente a la tecnología que más rápido se ha adoptado en la historia.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="stat">0.4%</div>
+        <p class="stat-label">Crecimiento anual de la productividad laboral en construcción (CAGR 2000–2022). La manufactura mejoró 7.5x más.</p>
+        <span class="cite">Fuente · McKinsey 2024</span>
+      </div>
+      <div class="card">
+        <div class="stat">35%</div>
+        <p class="stat-label">Menos productivo que el estándar internacional: 0,24 m² por día por trabajador en Chile vs 0,37 m² internacional.</p>
+        <span class="cite">Fuente · CChC, productividad</span>
+      </div>
+      <div class="card">
+        <div class="stat stat--ink">5 días</div>
+        <p class="stat-label">Le tomó a ChatGPT llegar a 1 millón de usuarios en noviembre de 2022. A los 2 meses ya eran 100 millones.</p>
+        <span class="cite">Fuente · Lámina "La llegada de ChatGPT"</span>
+      </div>
+      <div class="card">
+        <div class="stat stat--ink">16,9%</div>
+        <p class="stat-label">De las tareas de construcción podrían cubrirse hoy con IA — pero el uso real observado apenas llega al ~2%. Esa brecha es la oportunidad.</p>
+        <span class="cite">Fuente · Anthropic, marzo 2026</span>
+      </div>
+    </div>
+
+    <div class="chart" aria-label="Cuota de mercado de asistentes de IA, mayo 2026">
+      <h3>ChatGPT pierde cuota: de monopolio a ecosistema</h3>
+      <p class="chart-sub">De 98.8% de cuota al lanzamiento (dic 2022) a 46.4% en mayo 2026. Conclusión de la clase: no te amarres a un solo proveedor — el futuro es multi-modelo.</p>
+      <div class="bar-row"><span class="b-name">ChatGPT</span><span class="b-track"><span class="b-fill" style="width:46.4%"></span></span><span class="b-val">46.4%</span></div>
+      <div class="bar-row"><span class="b-name">Gemini</span><span class="b-track"><span class="b-fill" style="width:27.7%"></span></span><span class="b-val">27.7%</span></div>
+      <div class="bar-row"><span class="b-name">Claude</span><span class="b-track"><span class="b-fill" style="width:10.3%"></span></span><span class="b-val">10.3%</span></div>
+      <div class="bar-row"><span class="b-name">Grok</span><span class="b-track"><span class="b-fill" style="width:3.3%"></span></span><span class="b-val">3.3%</span></div>
+      <div class="bar-row"><span class="b-name">DeepSeek</span><span class="b-track"><span class="b-fill" style="width:3.2%"></span></span><span class="b-val">3.2%</span></div>
+      <div class="bar-row"><span class="b-name">Perplexity</span><span class="b-track"><span class="b-fill" style="width:2.8%"></span></span><span class="b-val">2.8%</span></div>
+      <div class="bar-row"><span class="b-name">Meta AI</span><span class="b-track"><span class="b-fill" style="width:2.5%"></span></span><span class="b-val">2.5%</span></div>
+      <div class="bar-row"><span class="b-name">Copilot</span><span class="b-track"><span class="b-fill" style="width:1.6%"></span></span><span class="b-val">1.6%</span></div>
+      <span class="cite">Fuente · Visual Capitalist, cuota IA 2022–2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. §2 Desmitificando la IA -->
+<section class="sec" id="desmitificando">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">02 · Desmitificando la IA</span>
+      <h2>Qué es realmente y qué no</h2>
+      <p>"AI is the technology of making machines smart" — Demis Hassabis, co-fundador y CEO de Google DeepMind. Sin humo: mitos, conceptos y cómo hablarle bien.</p>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800">Mitos vs Realidad</h3>
+    <div class="myth-pair">
+      <div class="myth"><b>"La IA piensa como un humano"</b><p>Conciencia propia, razonamiento, emociones.</p></div>
+      <div class="myth-arrow" aria-hidden="true">&#8594;</div>
+      <div class="truth"><b>Es un sistema que reconoce patrones</b><p>Procesa enormes cantidades de datos para generar respuestas probables.</p></div>
+    </div>
+    <div class="myth-pair">
+      <div class="myth"><b>"La IA lo puede todo"</b><p>Solución mágica universal sin límites ni supervisión.</p></div>
+      <div class="myth-arrow" aria-hidden="true">&#8594;</div>
+      <div class="truth"><b>Aprende de datos, no inventa</b><p>Tiene sesgos, comete errores y requiere supervisión humana.</p></div>
+    </div>
+    <div class="myth-pair">
+      <div class="myth"><b>"La IA nos va a reemplazar"</b><p>Eliminará la necesidad de criterio y trabajo profesional.</p></div>
+      <div class="myth-arrow" aria-hidden="true">&#8594;</div>
+      <div class="truth"><b>Amplifica tus capacidades</b><p>Es una herramienta. Quien la usa bien supera a quien no la usa.</p></div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">Conceptos clave</h3>
+    <div class="grid grid-3" style="margin-top:14px">
+      <div class="card"><h3>LLM</h3><p>Modelo entrenado con miles de millones de textos para predecir la siguiente palabra en una secuencia. Simple pero poderoso: es la tecnología detrás de ChatGPT, Claude y Gemini.</p></div>
+      <div class="card"><h3>Token</h3><p>La unidad mínima de texto con la que trabaja un modelo: fragmentos de palabras que el LLM lee y genera uno a uno.</p></div>
+      <div class="card"><h3>RAG</h3><p>El modelo busca primero en tus documentos (planos, contratos, normativa) y responde citando esa fuente, en vez de solo su memoria.</p></div>
+      <div class="card"><h3>Computer Vision</h3><p>IA que interpreta imágenes y video: leer planos, detectar avance de obra o falta de EPP en fotos de terreno.</p></div>
+      <div class="card"><h3>Agentes IA</h3><p>El modelo deja de solo responder: planifica, usa herramientas y ejecuta trabajo real dentro de tus sistemas.</p></div>
+      <div class="card"><h3>BIM + IA</h3><p>La capa de inteligencia sobre el modelo BIM: comparar lo construido contra lo diseñado y consultar el modelo en lenguaje natural.</p></div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">Chatbot vs Agente: el concepto de 2026</h3>
+    <div class="vs">
+      <div class="vs-head">
+        <div>Chatbot<span>Responde preguntas</span></div>
+        <div>Agente<span>Ejecuta trabajo</span></div>
+      </div>
+      <div class="vs-row"><div>Espera tu pregunta y contesta</div><div>Recibe un objetivo y planifica los pasos</div></div>
+      <div class="vs-row"><div>Resume el correo de la ITO</div><div>Redacta la respuesta, adjunta la evidencia y la deja lista para tu aprobación</div></div>
+      <div class="vs-row"><div>Te dice qué falta en el estado de pago</div><div>Junta los respaldos, arma el documento y avisa a quien debe firmar</div></div>
+      <div class="vs-row"><div>Vive en una pestaña aparte</div><div>Usa tus herramientas: correo, planillas, WhatsApp, software de gestión</div></div>
+      <div class="vs-note">Clave: el agente no opera solo. Trabaja con permisos definidos, registro auditable y aprobación humana en las decisiones que importan.</div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">Prompting: cómo hablarle bien a la IA</h3>
+    <div class="formula">
+      <div class="f-part"><b>ROL</b><span>&iquest;Qui&eacute;n eres?</span><p>Actúa como un jefe de obra con 20 años de experiencia</p></div>
+      <div class="f-part"><b>CONTEXTO</b><span>&iquest;Cu&aacute;l es la situaci&oacute;n?</span><p>Estamos en la etapa de estructura de un edificio de 8 pisos</p></div>
+      <div class="f-part"><b>TAREA</b><span>&iquest;Qu&eacute; necesitas?</span><p>Genera una checklist de control de calidad para el hormigonado</p></div>
+      <div class="f-part"><b>FORMATO</b><span>&iquest;C&oacute;mo lo quieres?</span><p>En tabla con columnas: Ítem, Criterio, Responsable, Resultado</p></div>
+    </div>
+    <div class="prompt-box">
+      <pre id="promptTemplate">Actúa como un jefe de terreno con 20 años de experiencia en edificación en Chile.
+
+Contexto: recibí un correo de la ITO con observaciones al último estado de pago y necesito responder hoy, respaldado en el libro de obras.
+
+Tarea: 1) resume las observaciones en una lista, 2) redacta un borrador de respuesta formal punto por punto, 3) indícame qué evidencia del libro de obras debo adjuntar en cada punto.
+
+Formato: respuesta en tono profesional, lista numerada, máximo una página. Si te falta información, pregúntame antes de inventar.</pre>
+      <button class="btn" id="copyBtn" type="button">Copiar plantilla</button>
+      <p class="copy-ok" id="copyOk">Copiada. P&eacute;gala en ChatGPT, Claude o Gemini.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. §3 IA en construcción -->
+<section class="sec" id="construccion">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">03 · IA en Construcción</span>
+      <h2>El problema es la fricción de información</h2>
+      <p>La construcción es la industria más grande del mundo con la menor adopción tecnológica. La información existe — planos, correos, RDIs, planillas — pero vive dispersa en sistemas sin conexión.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="stat">25%</div>
+        <p class="stat-label">De los retrasos se deben a espera de información. 15–25% del tiempo total de obra según la industria.</p>
+        <span class="cite">Fuente · McKinsey 2017</span>
+      </div>
+      <div class="card">
+        <div class="stat">20%</div>
+        <p class="stat-label">De los proyectos terminan con sobrecostos sobre el presupuesto inicial. Los reprocesos por planos incorrectos suman 9% del costo total.</p>
+        <span class="cite">Fuente · Oxford 2022 · CII Benchmarking</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>La oportunidad LatAm</h3>
+      <p>Una industria de US$709 mil millones que opera a lápiz, Excel y WhatsApp. El 70% de los contratistas y desarrolladores entregan con retraso, hay 23 millones de viviendas de déficit habitacional y más de 250 startups ConTech ya identificadas en la región. "Una industria de US$709 mil millones sin un líder tecnológico claro. Todavía."</p>
+      <span class="cite">Fuente · Zacua Ventures × Leonard (VINCI), 2026</span>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">Tres casos que muestran hacia dónde va el rubro</h3>
+    <div class="grid grid-3" style="margin-top:14px">
+      <div class="card case">
+        <span class="chip">Validación de mercado</span>
+        <h3>Procore + Datagrid</h3>
+        <p>En 6 meses el gigante del rubro pasó de vender software de gestión a vender "compañeros de trabajo digitales".</p>
+        <ul>
+          <li>Ene 2026: Procore adquiere Datagrid, la plataforma de IA que conecta planos, ERPs y documentos.</li>
+          <li>May 2026: agentes nativos para RFI, Submittals, Daily Log y Contract Review.</li>
+          <li>Jul 2026: "Digital Coworkers", biblioteca de 20 agentes. El agente ya es un producto con precio.</li>
+        </ul>
+        <span class="cite">Fuente · Procore · ENR · Construction Dive</span>
+      </div>
+      <div class="card case">
+        <span class="chip">Caso CChC</span>
+        <h3>Agentes CChC</h3>
+        <p>La Cámara desarrolló dos agentes para agilizar la tramitación de permisos de edificación entre solicitantes y revisores DOM.</p>
+        <ul>
+          <li>Clara Revi, asistente para solicitantes: revisión de antecedentes y de la solicitud, consultas normativas y sobre el acta de observaciones.</li>
+          <li>Norman Revi, asistente para revisores DOM: revisión de antecedentes, redacción asistida de observaciones y consultas normativas.</li>
+        </ul>
+        <span class="cite">Fuente · CChC, Plataforma REVI</span>
+      </div>
+      <div class="card case">
+        <span class="chip">Caso Kango</span>
+        <h3>Agentes Kango</h3>
+        <p>El WhatsApp de tu obra, convertido en gestión: la información que ya circula en los grupos se transforma en bitácora, cobros y cumplimiento, sin cambiar de app.</p>
+        <ul>
+          <li>Captura: avances, fotos y pendientes quedan registrados como bitácora de obra, solos.</li>
+          <li>Responde: consultas de normativa y planos en el mismo chat, con fuente citada.</li>
+          <li>Cobra y cumple: respaldo de estados de pago, libro de obras y evidencia para la ITO.</li>
+        </ul>
+        <span class="cite">Fuente · Kango, agente orquestador</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. §4 Impacto en tu empresa -->
+<section class="sec" id="impacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">04 · Impacto en tu empresa</span>
+      <h2>Dónde está tu empresa y cómo partir</h2>
+      <p>La brecha principal no está en la tecnología: está en las personas, los datos y la forma de partir.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="stat">42,2%</div>
+        <p class="stat-label">De las empresas chilenas está recién en fase de exploración de IA; solo un 3,6% escala con retornos medibles.</p>
+        <span class="cite">Fuente · MAS Analytics (DF), marzo 2026</span>
+      </div>
+      <div class="card">
+        <div class="stat">79%</div>
+        <p class="stat-label">No mide el retorno de sus iniciativas de IA. 9 de cada 10 empresas siguen en pilotaje o exploración.</p>
+        <span class="cite">Fuente · CDF-CL y PMG Chile, agosto 2026</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>El dinero inteligente apuesta por Agentic AI</h3>
+      <p>En la encuesta 2026 a inversionistas ConTech de Zacua Ventures, los agentes de IA son el sub-segmento #1 (74% de interés) y el 67% de los fondos quiere aumentar su inversión en IA este año: +17 puntos en 2 años. Solo en Q2 2026 se invirtieron US$1.031 millones en ConTech, +30% vs 2025.</p>
+      <span class="cite">Fuente · Zacua Ventures, 2026 ConTech Investor Survey · Cemex Ventures</span>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">5 pasos para usar mejor la IA</h3>
+    <div class="acc">
+      <details open>
+        <summary><span class="n">1</span>Identifica tu dolor de cabeza<span class="caret">&#9662;</span></summary>
+        <div class="acc-body">
+          <p>&iquest;D&oacute;nde puede la IA ayudarte m&aacute;s?</p>
+          <p class="q">Pregunta: &iquest;Qu&eacute; tarea consume m&aacute;s horas de tu equipo de forma repetitiva?</p>
+          <p class="tip"><b>Tip:</b> Enf&oacute;cate en un solo problema para empezar. No en toda la empresa.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="n">2</span>Define objetivos claros<span class="caret">&#9662;</span></summary>
+        <div class="acc-body">
+          <p>&iquest;Qu&eacute; esperas lograr con la IA?</p>
+          <p class="q">Pregunta: &iquest;Puedes medir el &eacute;xito con un n&uacute;mero concreto?</p>
+          <p class="tip"><b>Tip:</b> Usa objetivos SMART: espec&iacute;ficos, medibles, alcanzables, relevantes y con plazo.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="n">3</span>Elige la herramienta adecuada<span class="caret">&#9662;</span></summary>
+        <div class="acc-body">
+          <p>No necesitas un equipo de cient&iacute;ficos de datos.</p>
+          <p class="q">Pregunta: &iquest;La herramienta se integra con lo que ya usas hoy?</p>
+          <p class="tip"><b>Tip:</b> ChatGPT, Zapier, CRMs con IA. Empieza con lo que no requiere c&oacute;digo.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="n">4</span>Empieza peque&ntilde;o, piensa en grande<span class="caret">&#9662;</span></summary>
+        <div class="acc-body">
+          <p>Proyectos piloto y escalabilidad.</p>
+          <p class="q">Pregunta: &iquest;Qu&eacute; &aacute;rea puedo transformar en 30 o 60 d&iacute;as?</p>
+          <p class="tip"><b>Tip:</b> Involucra a tu equipo desde el d&iacute;a 1. El &eacute;xito depende de la adopci&oacute;n, no solo la tecnolog&iacute;a.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="n">5</span>Mide y optimiza<span class="caret">&#9662;</span></summary>
+        <div class="acc-body">
+          <p>El camino continuo de la IA.</p>
+          <p class="q">Pregunta: &iquest;Se redujeron los tiempos? &iquest;Aumentaron las ventas?</p>
+          <p class="tip"><b>Tip:</b> La IA no se instala y se olvida. Monitorea, ajusta y escala continuamente.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Y al implementar, recuerda la hoja de ruta completa</h3>
+      <p>Identificar oportunidades de alto valor, asegurar apoyo del liderazgo, rediseñar procesos con la IA al centro, capacitar a los mandos medios, ciclos cortos de retroalimentación, fortalecer confianza — la IA sugiere, el profesional decide — y construir una cultura de colaboración humano-IA: copiloto, no reemplazo.</p>
+      <span class="cite">Fuente · Lámina "Cómo implementar IA en tu organización"</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7. §5 Toolbox personal -->
+<section class="sec" id="toolbox">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">05 · Toolbox personal</span>
+      <h2>Tu caja de herramientas AI</h2>
+      <p>Las herramientas que mostramos en la clase, para partir hoy mismo.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card tool"><h3>Claude</h3><p class="tag">Escritura · An&aacute;lisis</p><p>El modelo más capaz para escritura, análisis y razonamiento complejo. Excelente para contexto largo. Su consola reúne proyectos con contexto, artefactos y tareas programadas.</p><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></div>
+      <div class="card tool"><h3>Gemini</h3><p class="tag">Multimodal · Google</p><p>Modelo multimodal de Google. Destaca en análisis de documentos largos y razonamiento científico.</p><a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a></div>
+      <div class="card tool"><h3>Cursor</h3><p class="tag">Editor · IDE</p><p>Editor de código con IA integrada. Completa funciones, refactoriza y genera código directamente en tu IDE.</p><a href="https://cursor.com" target="_blank" rel="noopener">cursor.com</a></div>
+      <div class="card tool"><h3>Claude Code</h3><p class="tag">Terminal · Agente</p><p>Agente que lee y modifica proyectos completos: planillas, informes, scripts.</p><a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a></div>
+      <div class="card tool"><h3>Bolt.new</h3><p class="tag">Full-stack · No-code</p><p>Crea apps web completas desde un prompt. De la idea al deploy en minutos, sin configuración.</p><a href="https://bolt.new" target="_blank" rel="noopener">bolt.new</a></div>
+      <div class="card tool"><h3>Supabase</h3><p class="tag">PostgreSQL · BaaS</p><p>Base de datos PostgreSQL con API automática, auth y almacenamiento. Backend completo en minutos.</p><a href="https://supabase.com" target="_blank" rel="noopener">supabase.com</a></div>
+      <div class="card tool"><h3>n8n</h3><p class="tag">Workflows · Integraciones</p><p>Conecta WhatsApp, correo, planillas y APIs en flujos automatizados con IA. Automatiza procesos sin programar.</p><a href="https://n8n.io" target="_blank" rel="noopener">n8n.io</a></div>
+      <div class="card tool"><h3>Modos Agente</h3><p class="tag">Navegador · Automatizaci&oacute;n</p><p>Claude, ChatGPT y Gemini ya navegan, completan formularios y ejecutan tareas web de varios pasos por ti.</p><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></div>
+      <div class="card tool"><h3>OpenClaw</h3><p class="tag">Agentes de IA</p><p>Un agente que opera por ti: limpia tu inbox, envía emails, gestiona tu calendario — todo desde WhatsApp o Telegram. No solo responde: ejecuta.</p><a href="https://openclaw.ai" target="_blank" rel="noopener">openclaw.ai</a></div>
+    </div>
+
+    <h3 style="font-size:20px;font-weight:800;margin-top:36px">Dos puertas de entrada</h3>
+    <p style="color:var(--ink-60);font-size:16px;margin-top:6px">Si vas a aprender IA hoy, estos son los mejores puntos de partida — uno para ver, uno para hacer.</p>
+    <div class="doors">
+      <div class="door">
+        <img src="public/img/lab10.png" alt="LAB10">
+        <h3>LAB10</h3>
+        <span class="chip">Cursos intensivos · Clases gratuitas disponibles</span>
+        <p>Programas prácticos para profesionales y empresas. Aprende haciendo, con proyectos reales. Ideal si quieres dominar IA con estructura.</p>
+        <a href="https://lab10.cl" target="_blank" rel="noopener">lab10.cl</a>
+      </div>
+      <div class="door">
+        <img src="public/img/rasmic.jpg" alt="Ras Mic">
+        <h3>Ras Mic</h3>
+        <span class="chip">Contenido divulgativo · 2 con IA = 15 sin IA</span>
+        <p>Explica cómo funciona la IA con ejemplos visuales e historias concretas. Perfecto si quieres entender antes de profundizar.</p>
+        <a href="https://youtube.com/@RasMic" target="_blank" rel="noopener">youtube.com/@RasMic</a>
+      </div>
+    </div>
+
+    <div class="big-quote">No necesitas saber programar para empezar. <span>Solo necesitas empezar.</span></div>
+  </div>
+</section>
+
+<!-- 8. Cierre y captura -->
+<section class="sec" id="cierre">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="kicker">06 · Próxima clase</span>
+      <h2 class="close-quote" style="margin-top:6px">La pregunta ya no es <em>si usar IA</em>, sino cómo integrarla donde se toman decisiones.</h2>
+      <p class="close-sub">Los proyectos que comiencen a operar con inteligencia hoy marcarán el estándar del sector en los próximos cinco años.</p>
+    </div>
+
+    <div class="card next-card">
+      <span class="chip chip--red">Pr&oacute;xima clase</span>
+      <h3>Clase #2: IA en tu día a día - productividad real</h3>
+      <p>Implementación práctica y casos de uso reales.</p>
+    </div>
+
+    <form id="leadForm" novalidate>
+      <h3>Quiero seguir aprendiendo</h3>
+      <p class="hint">Déjanos tu contacto y te avisamos por WhatsApp de la próxima clase.</p>
+      <div class="fields">
+        <label><span>Nombre</span><input type="text" name="nombre" id="f-nombre" autocomplete="name" required></label>
+        <label><span>Empresa</span><input type="text" name="empresa" id="f-empresa" autocomplete="organization" required></label>
+        <label><span>Cargo</span><input type="text" name="cargo" id="f-cargo" autocomplete="organization-title" required></label>
+        <label><span>WhatsApp</span><input type="tel" name="whatsapp" id="f-whatsapp" inputmode="tel" autocomplete="tel" placeholder="+56 9 " required></label>
+      </div>
+      <button class="btn btn--red" type="submit" id="submitBtn">Av&iacute;senme de la pr&oacute;xima clase</button>
+      <p class="form-ok" id="formOk">Listo, te avisamos por WhatsApp</p>
+      <p class="form-err" id="formErr">No pudimos guardar tus datos. Int&eacute;ntalo de nuevo o escr&iacute;benos directo.</p>
+    </form>
+
+    <div class="alt-actions">
+      <a class="btn btn--ghost" href="mailto:felipe@getkango.com?subject=Clase%20CChC%20-%20Vibe%20%26%20Build">Escribir a Felipe</a>
+      <a class="btn btn--ghost" id="waBtn" href="#" hidden>Hablar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Footer -->
+<footer>
+  <div class="wrap">
+    <img src="public/img/logo-kango.png" alt="Kango">
+    <p>Kango es una startup de tecnología para la construcción que desarrolla agentes de inteligencia artificial para equipos en terreno.</p>
+    <div class="links">
+      <a href="https://getkango.com" target="_blank" rel="noopener">getkango.com</a>
+      <span style="color:var(--ink-40)">kangolab</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   Configuración pública (inyectar valores reales antes del deploy)
+   ============================================================ */
+var MOCK_MODE = true;
+var SUPABASE_URL = "";          // p.ej. https://xxxx.supabase.co
+var SUPABASE_ANON_KEY = "";     // anon key (pública por diseño)
+var WHATSAPP_NUMBER = "";       // p.ej. 569XXXXXXXX (solo dígitos)
+
+/* ---------- WhatsApp click-to-chat ---------- */
+(function () {
+  var btn = document.getElementById("waBtn");
+  var num = (WHATSAPP_NUMBER || "").replace(/\D/g, "");
+  if (num.length >= 9) {
+    var text = encodeURIComponent("Hola Felipe, estuve en la clase CChC y quiero saber más de ");
+    btn.href = "https://wa.me/" + num + "?text=" + text;
+    btn.target = "_blank";
+    btn.rel = "noopener";
+    btn.hidden = false;
+  }
+})();
+
+/* ---------- Agenda activa (IntersectionObserver) ---------- */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".agenda a"));
+  var byId = {};
+  links.forEach(function (a) { byId[a.dataset.sec] = a; });
+  var current = null;
+  function activate(id) {
+    if (current === id) return;
+    current = id;
+    links.forEach(function (a) { a.classList.toggle("on", a.dataset.sec === id); });
+    var active = byId[id];
+    if (active && active.scrollIntoView) {
+      active.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+    }
+  }
+  if ("IntersectionObserver" in window) {
+    var visible = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+      var order = ["motivacion", "desmitificando", "construccion", "impacto", "toolbox", "cierre"];
+      for (var i = order.length - 1; i >= 0; i--) {
+        if (visible[order[i]]) { activate(order[i]); return; }
+      }
+    }, { rootMargin: "-30% 0px -55% 0px" });
+    ["motivacion", "desmitificando", "construccion", "impacto", "toolbox", "cierre"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+})();
+
+/* ---------- Copiar plantilla de prompt ---------- */
+(function () {
+  var btn = document.getElementById("copyBtn");
+  var ok = document.getElementById("copyOk");
+  btn.addEventListener("click", function () {
+    var text = document.getElementById("promptTemplate").textContent;
+    function done() {
+      ok.style.display = "block";
+      btn.textContent = "Copiada";
+      setTimeout(function () { ok.style.display = "none"; btn.textContent = "Copiar plantilla"; }, 3000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+
+/* ---------- Envío de leads ---------- */
+function getUtmSource() {
+  try {
+    return new URLSearchParams(window.location.search).get("utm_source") || null;
+  } catch (e) { return null; }
+}
+
+function submitLead(payload) {
+  if (MOCK_MODE || !SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    console.log("[MOCK_MODE] lead:", JSON.stringify(payload));
+    return Promise.resolve({ ok: true, mock: true });
+  }
+  return fetch(SUPABASE_URL + "/rest/v1/cchc_leads", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify(payload)
+  }).then(function (res) {
+    if (!res.ok) { throw new Error("Supabase " + res.status); }
+    return { ok: true };
+  });
+}
+
+(function () {
+  var form = document.getElementById("leadForm");
+  var okMsg = document.getElementById("formOk");
+  var errMsg = document.getElementById("formErr");
+  var btn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    okMsg.style.display = "none";
+    errMsg.style.display = "none";
+
+    var nombre = document.getElementById("f-nombre").value.trim();
+    var empresa = document.getElementById("f-empresa").value.trim();
+    var cargo = document.getElementById("f-cargo").value.trim();
+    var whatsapp = document.getElementById("f-whatsapp").value.trim();
+
+    if (!nombre || !empresa || !cargo || !whatsapp) {
+      errMsg.textContent = "Completa los 4 campos para que podamos avisarte.";
+      errMsg.style.display = "block";
+      return;
+    }
+    if (whatsapp.replace(/\D/g, "").length < 8) {
+      errMsg.textContent = "Revisa el número de WhatsApp: parece incompleto.";
+      errMsg.style.display = "block";
+      return;
+    }
+
+    var payload = {
+      nombre: nombre,
+      empresa: empresa,
+      cargo: cargo,
+      whatsapp: whatsapp,
+      fuente: "cchc_clase_1",
+      user_agent: navigator.userAgent || null,
+      utm_source: getUtmSource()
+    };
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+    submitLead(payload).then(function () {
+      form.querySelector(".fields").hidden = true;
+      btn.hidden = true;
+      okMsg.style.display = "block";
+    }).catch(function (err) {
+      console.error("submitLead error:", err);
+      errMsg.textContent = "No pudimos guardar tus datos. Inténtalo de nuevo o escríbenos directo.";
+      errMsg.style.display = "block";
+      btn.disabled = false;
+      btn.textContent = "Avísenme de la próxima clase";
+    });
+  });
+})();
+</script>
+</body>
+</html>

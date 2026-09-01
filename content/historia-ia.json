@@ -1,0 +1,38 @@
+{
+  "sectionLabel": "De Turing a los agentes",
+  "title": "Historia de la IA",
+  "hitos": [
+    [
+      "1950",
+      "Turing pregunta"
+    ],
+    [
+      "1956",
+      "Nace la IA (Dartmouth)"
+    ],
+    [
+      "1974–1980",
+      "Primer invierno de la IA"
+    ],
+    [
+      "1987–2000",
+      "Segundo invierno de la IA"
+    ],
+    [
+      "2010",
+      "ImageNet & Deep Learning"
+    ],
+    [
+      "2022",
+      "ChatGPT: 100 millones de usuarios en 2 meses"
+    ],
+    [
+      "2025",
+      "Nacen los agentes de IA"
+    ],
+    [
+      "2026",
+      "La era agéntica llega a la obra: Procore integra Datagrid"
+    ]
+  ]
+}

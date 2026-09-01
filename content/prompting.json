@@ -1,0 +1,36 @@
+{
+  "sectionLabel": "Clase #1 · Herramientas",
+  "title": "Prompting",
+  "subtitle": "Cómo hablarle bien a la IA",
+  "formula": [
+    [
+      "ROL",
+      "¿Quién eres?",
+      "Actúa como un jefe de obra con 20 años de experiencia"
+    ],
+    [
+      "CONTEXTO",
+      "¿Cuál es la situación?",
+      "Estamos en la etapa de estructura de un edificio de 8 pisos"
+    ],
+    [
+      "TAREA",
+      "¿Qué necesitas?",
+      "Genera una checklist de control de calidad para el hormigonado"
+    ],
+    [
+      "FORMATO",
+      "¿Cómo lo quieres?",
+      "En tabla con columnas: Ítem, Criterio, Responsable, Resultado"
+    ]
+  ],
+  "tipTitle": "El prompting es una ciencia empírica",
+  "tipDesc": "Siempre prueba tus prompts e itera con frecuencia. Un buen prompt no se escribe — se refina.",
+  "antiHallu": [
+    "Pídele que diga \"no sé\" si no está seguro",
+    "Indícale que responda solo si tiene alta confianza",
+    "Pídele que piense antes de responder",
+    "Solicita citas textuales del documento antes de responder"
+  ],
+  "antiHalluWarning": "Las alucinaciones son el mayor riesgo al usar IA en decisiones técnicas. Siempre valida los outputs críticos antes de usarlos en obra o documentos oficiales."
+}

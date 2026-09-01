@@ -1,0 +1,24 @@
+{
+  "labelProblem": "Motivación",
+  "problemTitle": "La construcción pierde miles de millones por fricción de información",
+  "stat1": "25%",
+  "stat1Label": "de los retrasos se deben a espera de información",
+  "stat2": "20%",
+  "stat2Label": "de los proyectos terminan con sobrecostos",
+  "problemDesc": "La construcción es la industria más grande del mundo con la menor adopción tecnológica. Hoy muchos procesos siguen siendo manuales.",
+  "painPoints": [
+    [
+      "Tiempo perdido",
+      "El capataz espera horas la respuesta del especialista. La obra se detiene."
+    ],
+    [
+      "Documentos confusos",
+      "Plano rev. 0 en terreno, rev. A en oficina. Nadie sabe cuál es el final."
+    ],
+    [
+      "Errores repetitivos",
+      "Cada proyecto repite los mismos errores. Nadie aprende de la historia."
+    ]
+  ],
+  "sequoiaMsg": "Los tiempos de respuestas entre colaboradores, hacen la diferencia en el plazo y costo real de los proyectos"
+}

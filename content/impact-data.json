@@ -1,0 +1,26 @@
+{
+  "title": "El costo real de la fricción de información",
+  "subtitle": "El impacto medible de la desconexión en terreno según la industria.",
+  "impactTable": [
+    [
+      "Retrasos por espera de información",
+      "15–25% del tiempo total de obra",
+      "McKinsey (2017)"
+    ],
+    [
+      "Reprocesos por planos incorrectos",
+      "9% del costo total del proyecto",
+      "CII Benchmarking"
+    ],
+    [
+      "Sobrecosto promedio de proyectos",
+      "20% sobre el presupuesto inicial",
+      "Oxford (2022)"
+    ],
+    [
+      "Ahorro anual potencial por digitalización",
+      "$45K–$150K USD por empresa/año",
+      "ERP Today (2026)"
+    ]
+  ]
+}

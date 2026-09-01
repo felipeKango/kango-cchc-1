@@ -1,0 +1,28 @@
+{
+  "sectionLabel": "Toolbox personal · Anthropic",
+  "title": "La consola de Claude",
+  "subtitle": "Un solo lugar para conversar, crear artefactos, programar tareas y dejar trabajando a tus agentes.",
+  "secciones": [
+    [
+      "Proyectos",
+      "Espacios con contexto propio: subes planos, presupuestos y protocolos una vez y todas las conversaciones del proyecto los usan."
+    ],
+    [
+      "Artefactos",
+      "Entregables reutilizables que Claude construye contigo: planillas, informes, checklists y pequeñas apps internas."
+    ],
+    [
+      "Programado",
+      "Tareas que se ejecutan solas a una hora fija: reporte semanal de avance, resumen de correos o control de plazos."
+    ],
+    [
+      "Despacho",
+      "Delegas un encargo completo y varios agentes trabajan en paralelo mientras tú sigues en obra."
+    ],
+    [
+      "Personalizar",
+      "Defines cómo te responde: tono, formato de entrega y reglas propias de tu empresa."
+    ]
+  ],
+  "hintText": "El chat es solo la puerta de entrada: el valor real está en proyectos con contexto y tareas que corren sin ti."
+}

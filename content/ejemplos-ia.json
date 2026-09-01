@@ -1,0 +1,57 @@
+{
+  "sectionLabel": "IA en Construcción",
+  "title": "Ejemplos concretos",
+  "subtitle": "Aplicaciones reales hoy",
+  "examples": [
+    [
+      "Diseño generativo",
+      "IA genera miles de variantes optimizando costo, estructura y eficiencia energética."
+    ],
+    [
+      "Estimación automática",
+      "Computer vision lee planos y genera presupuestos de materiales en minutos."
+    ],
+    [
+      "Seguridad en obra",
+      "Cámaras con IA detectan falta de EPP, zonas de peligro y comportamientos de riesgo."
+    ],
+    [
+      "Seguimiento de progreso",
+      "Drones y robots mapean el avance y lo comparan con el modelo BIM automáticamente."
+    ],
+    [
+      "Predicción de delays",
+      "Modelos ML analizan datos históricos y alertan sobre riesgos de atraso semanas antes."
+    ],
+    [
+      "Gestión del conocimiento",
+      "LLMs centralizan decisiones pasadas y permiten consultas en lenguaje natural."
+    ],
+    [
+      "Robótica y automatización",
+      "Robots colocan ladrillos, imprimen estructuras en 3D y realizan tareas repetitivas."
+    ],
+    [
+      "Análisis de contratos",
+      "NLP revisa contratos, extrae cláusulas clave y compara contra estándares en segundos."
+    ]
+  ],
+  "metrics": [
+    [
+      "Análisis de licitación a plan de obra",
+      "2-3 días",
+      "30-50 min"
+    ],
+    [
+      "Estimación preliminar de presupuestos",
+      "1-2 días",
+      "60 min"
+    ],
+    [
+      "Generación de informes de riesgos",
+      "30 min",
+      "3-5 min"
+    ]
+  ],
+  "metricsSubtitle": "Proyectos piloto con Gemini, Claude y OpenProject"
+}

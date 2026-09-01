@@ -1,0 +1,24 @@
+{
+  "sectionLabel": "IA en construcción",
+  "title": "Tenemos datos... pero no inteligencia operativa",
+  "introDesc": "El sector construcción genera volúmenes masivos de información en cada fase: planos, contratos, correos, informes de terreno y más. Aun así, las decisiones siguen siendo lentas, manuales y reactivas.",
+  "fragmentsTitle": "La información existe, pero vive dispersa en sistemas sin conexión",
+  "fragments": [
+    [
+      "Emails y comunicaciones",
+      "Decisiones críticas enterradas en cadenas de correo que nadie puede rastrear."
+    ],
+    [
+      "RDIs",
+      "Solicitudes de información gestionadas en plataformas desconectadas entre sí."
+    ],
+    [
+      "Planos y revisiones",
+      "Múltiples versiones circulando sin control centralizado de cambios."
+    ],
+    [
+      "Múltiples sistemas",
+      "Software de gestión, BIM, correo, planillas: cada herramienta habla su propio idioma."
+    ]
+  ]
+}

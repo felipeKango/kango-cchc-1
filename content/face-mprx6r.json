@@ -1,0 +1,56 @@
+{
+  "sectionLabel": "Desmitificando la IA · Evolución del Mercado",
+  "date": "2022 — 2026",
+  "title": "ChatGPT pierde cuota: de monopolio a ecosistema",
+  "badge2022": "Diciembre 2022",
+  "stat2022Number": "98.8%",
+  "stat2022Label": "Cuota de ChatGPT al lanzamiento",
+  "badge2026": "Mayo 2026",
+  "stat2026Number": "46.4%",
+  "stat2026Label": "Cuota de ChatGPT (-52.4 pts)",
+  "marketShare": [
+    [
+      "ChatGPT",
+      "46.4%",
+      "OpenAI"
+    ],
+    [
+      "Gemini",
+      "27.7%",
+      "Google"
+    ],
+    [
+      "Claude",
+      "10.3%",
+      "Anthropic"
+    ],
+    [
+      "Grok",
+      "3.3%",
+      "xAI"
+    ],
+    [
+      "DeepSeek",
+      "3.2%",
+      "DeepSeek"
+    ],
+    [
+      "Perplexity",
+      "2.8%",
+      "Perplexity"
+    ],
+    [
+      "Meta AI",
+      "2.5%",
+      "Meta"
+    ],
+    [
+      "Copilot",
+      "1.6%",
+      "Microsoft"
+    ]
+  ],
+  "takeawayHeader": "Conclusión estratégica para las empresas",
+  "takeawayText": "No te amarres a un solo proveedor. El futuro de la IA es multi-modelo: rutar automáticamente cada consulta al modelo ideal según costo, precisión y velocidad.",
+  "sourceText": "Fuente: Visual Capitalist / Data AI Market Share (2022 - 2026)"
+}

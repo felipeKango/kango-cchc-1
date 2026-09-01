@@ -1,0 +1,60 @@
+{
+  "sectionLabel": "Tu arsenal personal",
+  "title": "Caja de herramientas AI",
+  "tools": [
+    [
+      "Cursor",
+      "Código",
+      "Editor de código con IA integrada. Completa funciones, refactoriza y genera código directamente en tu IDE.",
+      "https://cursor.com"
+    ],
+    [
+      "Codex",
+      "Código",
+      "Agente que lee y modifica proyectos completos: planillas, informes, scripts.",
+      "https://claude.ai/code"
+    ],
+    [
+      "Bolt.new",
+      "Desarrollo rápido",
+      "Crea apps web completas desde un prompt. De la idea al deploy en minutos, sin configuración.",
+      "https://bolt.new"
+    ],
+    [
+      "Supabase",
+      "Base de datos",
+      "Base de datos PostgreSQL con API automática, auth y almacenamiento. Backend completo en minutos.",
+      "https://supabase.com"
+    ],
+    [
+      "n8n",
+      "Productividad",
+      "Conecta WhatsApp, correo, planillas y APIs en flujos automatizados con IA. Automatiza procesos sin programar.",
+      "https://n8n.io"
+    ],
+    [
+      "Gemini",
+      "General",
+      "Modelo multimodal de Google. Destaca en análisis de documentos largos y razonamiento científico.",
+      "https://gemini.google.com"
+    ],
+    [
+      "Claude",
+      "General",
+      "El modelo más capaz para escritura, análisis y razonamiento complejo. Excelente para contexto largo.",
+      "https://claude.ai"
+    ],
+    [
+      "Modos Agente",
+      "Agentes",
+      "Claude, ChatGPT y Gemini ya navegan, completan formularios y ejecutan tareas web de varios pasos por ti.",
+      "https://claude.ai"
+    ],
+    [
+      "Anthropic API",
+      "Agentes",
+      "API de Claude para construir agentes inteligentes con uso de herramientas, visión y contexto extendido.",
+      "https://anthropic.com"
+    ]
+  ]
+}

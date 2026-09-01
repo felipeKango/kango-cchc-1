@@ -1,0 +1,45 @@
+{
+  "reportBadge": "2026 ConTech Investor Survey · Zacua Ventures",
+  "title": "El dinero inteligente apuesta por Agentic AI",
+  "topStat": "74%",
+  "topStatPill": "AI Agents #1",
+  "vcStat": "67%",
+  "vcStatPill": "Fondos ↑ 2026",
+  "trendInsight": "En 2 años la intención de inversión en IA creció +17 puntos — y ya se nota en el capital: US$1.031 millones invertidos en ConTech solo en Q2 2026, +30% vs 2025 (Cemex Ventures).",
+  "subSegments": [
+    [
+      "AI Agents",
+      "74%"
+    ],
+    [
+      "Predictive Analytics",
+      "65%"
+    ],
+    [
+      "Computer Vision",
+      "49%"
+    ],
+    [
+      "Machine Learning Ops",
+      "46%"
+    ],
+    [
+      "Generative AI",
+      "44%"
+    ]
+  ],
+  "investTrend": [
+    [
+      "2024",
+      "50"
+    ],
+    [
+      "2025",
+      "56"
+    ],
+    [
+      "2026",
+      "67"
+    ]
+  ]
+}

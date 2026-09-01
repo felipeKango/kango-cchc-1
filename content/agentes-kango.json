@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Caso Kango · AGENTE ORQUESTADOR",
+  "title": "El WhatsApp de tu obra, convertido en gestión",
+  "intro": "La información de la obra ya existe: vive en los grupos de WhatsApp y se pierde todos los días. Kango la captura y la transforma en bitácora, cobros y cumplimiento — sin pedirle a nadie que cambie de app.",
+  "verbs": [
+    [
+      "Captura",
+      "La puerta de entrada",
+      "Bitácora Inteligente: los avances, fotos y pendientes que ya circulan en el grupo de WhatsApp quedan registrados como bitácora de obra, solos."
+    ],
+    [
+      "Responde",
+      "Conocimiento al instante",
+      "Consultas de normativa, planos y especificaciones respondidas en el mismo chat, con la fuente citada. El capataz no espera horas al especialista."
+    ],
+    [
+      "Cobra",
+      "Plata respaldada",
+      "Cada registro alimenta el respaldo de estados de pago, adicionales y claims. El dato capturado en terreno se convierte en plata cobrada."
+    ],
+    [
+      "Cumple",
+      "Trazabilidad lista",
+      "Libro de obras, checklists de calidad y evidencia para la ITO, generados desde lo que ya ocurrió en terreno. Sin papeleo al final del turno."
+    ],
+    [
+      "Automatiza",
+      "El equipo digital",
+      "Reportes diarios, alertas de atraso y resúmenes semanales que llegan solos a quien corresponde. La obra informa sin que nadie redacte."
+    ]
+  ],
+  "proofLabel": "En terreno",
+  "proof": "De forma fácil, sin softwares adicionales",
+  "cta": "¿Quieres verlo en tu obra? Piloto de 90 días → felipe@getkango.com"
+}

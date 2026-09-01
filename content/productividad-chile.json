@@ -1,0 +1,17 @@
+{
+  "sectionLabel": "Contexto Chile",
+  "title": "¿Por qué mejorar la productividad en construcción?",
+  "reasons": [
+    "Plazos menores",
+    "Eficiencia operacional",
+    "Reducir costos",
+    "Más servicios habitacionales"
+  ],
+  "chileLabel": "Edificio 13 pisos · Chile",
+  "chileStat": "0,24 M² por día",
+  "intlLabel": "Edificio 19 pisos · Internacional",
+  "intlStat": "0,37 M² por día",
+  "gapStat": "35%",
+  "gapLabel": "menos productivo que el estándar internacional",
+  "source": "Fuente: Cámara Chilena de la Construcción (CChC)"
+}

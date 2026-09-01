@@ -1,0 +1,48 @@
+{
+  "sectionLabel": "Hoja de ruta",
+  "title": "Cómo implementar IA en tu organización",
+  "steps": [
+    [
+      "01",
+      "Identificar Oportunidades",
+      "Detectar escenarios de aplicación de alto valor donde la IA pueda generar impacto significativo.",
+      "Áreas con grandes volúmenes de datos o decisiones repetitivas"
+    ],
+    [
+      "02",
+      "Apoyo de Liderazgo",
+      "Obtener respaldo de la dirección para garantizar recursos y eliminar barreras organizacionales.",
+      "Demostrar ROI potencial y alineación estratégica"
+    ],
+    [
+      "03",
+      "Rediseñar Procesos",
+      "Reconfigurar flujos de trabajo con la IA como elemento central, no como simple añadido.",
+      "Optimización integral, no automatización aislada"
+    ],
+    [
+      "04",
+      "Capacitar Mandos Medios",
+      "Formar a los mandos intermedios que serán los principales impulsores del cambio en sus equipos.",
+      "Diseño de prompts y verificación de resultados"
+    ],
+    [
+      "05",
+      "Retroalimentación Rápida",
+      "Implementar ciclos cortos de feedback para ajustar rápidamente la estrategia de IA.",
+      "Reuniones semanales de revisión de resultados"
+    ],
+    [
+      "06",
+      "Fortalecer Confianza",
+      "Crear transparencia en el uso de IA y mantener al humano como verificador final de resultados.",
+      "La IA sugiere, el profesional decide"
+    ],
+    [
+      "07",
+      "Cultura Colaborativa",
+      "Desarrollar una mentalidad de colaboración humano-IA en toda la organización.",
+      "IA como \"copiloto\", no como reemplazo"
+    ]
+  ]
+}

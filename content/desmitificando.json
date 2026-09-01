@@ -1,0 +1,27 @@
+{
+  "sectionLabel": "Implementación de IA",
+  "title": "Las 5 trampas más comunes",
+  "tagline": "Conocerlas es el primer paso para no caer en ellas.",
+  "traps": [
+    [
+      "IA por \"tendencia\" vs necesidad real",
+      "FOMO-driven adoption"
+    ],
+    [
+      "Problema mal definido",
+      "Sin KPIs claros desde el día 1"
+    ],
+    [
+      "Expectativas irreales",
+      "Esperar ROI inmediato sin cambiar procesos"
+    ],
+    [
+      "Obsesión por el modelo",
+      "10% algoritmos · 20% infra · 70% personas y procesos"
+    ],
+    [
+      "Datos/procesos fragmentados y duplicados",
+      "Automatizar sobre caos"
+    ]
+  ]
+}

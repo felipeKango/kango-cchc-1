@@ -1,0 +1,18 @@
+{
+  "sectionLabel": "Transformación estructural",
+  "title": "La evolución del sector AECO",
+  "stages": [
+    [
+      "Sistemas aislados",
+      "Herramientas desconectadas, procesos manuales y datos en silos. Cada equipo trabaja con su propia versión de la verdad."
+    ],
+    [
+      "Datos conectados",
+      "Plataformas integradas que centralizan la información y permiten trazabilidad entre disciplinas y fases del proyecto."
+    ],
+    [
+      "Inteligencia operativa",
+      "La IA interpreta la información, prioriza lo urgente y genera recomendaciones accionables en el momento que más se necesitan."
+    ]
+  ]
+}

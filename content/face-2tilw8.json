@@ -1,0 +1,24 @@
+{
+  "sectionLabel": "Conceptos clave",
+  "title": "LLM: Modelos de Lenguaje Grandes",
+  "subtitle": "La tecnología detrás de ChatGPT, Claude, Gemini y otros agentes IA",
+  "llmExplanation": "Un LLM es un modelo de inteligencia artificial entrenado con miles de millones de textos para predecir la siguiente palabra en una secuencia. Simple pero poderoso.",
+  "caracteristicas": [
+    [
+      "Entrenamiento masivo",
+      "Procesó millones de palabras de toda internet"
+    ],
+    [
+      "Transformers",
+      "Arquitectura neural que entiende relaciones entre palabras"
+    ],
+    [
+      "Predicción probabilística",
+      "Calcula la siguiente palabra más probable basada en el contexto"
+    ],
+    [
+      "Adaptabilidad",
+      "Puede adaptarse a nuevas tareas con pocos ejemplos (few-shot learning)"
+    ]
+  ]
+}

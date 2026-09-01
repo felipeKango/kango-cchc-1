@@ -1,0 +1,23 @@
+{
+  "sectionLabel": "Desmitificando la IA · De chatbot a agente",
+  "title": "Orquestación agéntica",
+  "subtitle": "El modelo deja de solo responder: planifica, usa herramientas y ejecuta trabajo real dentro de tus sistemas.",
+  "concepts": [
+    [
+      "Toma acciones delimitadas",
+      "Actúa dentro de un perímetro definido por ti: qué puede hacer, sobre qué datos y hasta dónde llega su autonomía."
+    ],
+    [
+      "Planifica pasos de ejecución",
+      "Descompone un encargo en subtareas ordenadas, decide el orden y corrige el plan si un paso falla."
+    ],
+    [
+      "Interactúa con software",
+      "Se conecta a las herramientas que ya usas: planillas, ERP, correo, calendario y plataformas de obra."
+    ],
+    [
+      "Deriva a humanos",
+      "Cuando la decisión es crítica o el dato es ambiguo, escala a una persona en vez de inventar la respuesta."
+    ]
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "sectionLabel": "Caso CChC",
+  "title": "Agentes de IA para permisos de construcción",
+  "subtitle": "La Cámara Chilena de la Construcción desarrolló dos agentes especializados para agilizar la tramitación de permisos de edificación entre solicitantes y revisores DOM.",
+  "claraName": "Clara Revi",
+  "claraRole": "Asistente para solicitantes",
+  "normanName": "Norman Revi",
+  "normanRole": "Asistente para revisores DOM",
+  "claraFeatures": [
+    "Revisión de antecedentes",
+    "Revisión de la solicitud",
+    "Chat de consultas normativas",
+    "Consultas sobre el acta de observaciones"
+  ],
+  "normanFeatures": [
+    "Revisión de antecedentes",
+    "Revisión de la solicitud",
+    "Redacción asistida",
+    "Chat de consultas normativas"
+  ],
+  "sourceLabel": "Cámara Chilena de la Construcción · Plataforma REVI"
+}

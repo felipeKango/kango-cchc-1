@@ -1,0 +1,59 @@
+{
+  "sectionLabel": "Impacto en tu empresa · Diagnóstico",
+  "title": "Madurez de las empresas chilenas en IA en 2026",
+  "sampleDetail": "Empresas de todos los sectores, tamaños y zonas geográficas del país",
+  "sample": "740",
+  "pilares": [
+    [
+      "Etapa de madurez",
+      "9 de cada 10 empresas siguen en pilotaje o exploración"
+    ],
+    [
+      "Estrategia y gestión",
+      "Se invierte en IA sin plan formal ni medición de retorno"
+    ],
+    [
+      "Cultura y formación",
+      "La brecha principal está en las personas, no en la tecnología"
+    ],
+    [
+      "Gobernanza y datos",
+      "Sin reglas claras ni datos ordenados no hay IA escalable"
+    ]
+  ],
+  "stats": [
+    [
+      "66%",
+      "está en etapa de pilotaje"
+    ],
+    [
+      "25%",
+      "está en etapa de exploración"
+    ],
+    [
+      "8%",
+      "está en etapa de escalamiento"
+    ],
+    [
+      "1%",
+      "está en etapa de liderazgo"
+    ],
+    [
+      "79%",
+      "no mide el retorno de sus iniciativas de IA"
+    ],
+    [
+      "67%",
+      "no tiene un plan formal de IA alineado a la estrategia del negocio"
+    ],
+    [
+      "58%",
+      "de los colaboradores no ha recibido formación básica en IA"
+    ],
+    [
+      "85%",
+      "no tiene un comité de gobernanza para IA"
+    ]
+  ],
+  "sourceText": "Fuente: Índice de Transformación Digital en Inteligencia Artificial 2026, CDF-CL y PMG Chile · agosto 2026"
+}

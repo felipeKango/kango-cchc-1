@@ -1,0 +1,25 @@
+{
+  "sectionLabel": "IA en Construcción · Validación de mercado",
+  "title": "El gigante del rubro compró un equipo de agentes",
+  "subtitle": "En 6 meses Procore pasó de vender software de gestión a vender “compañeros de trabajo digitales”.",
+  "milestones": [
+    [
+      "Enero 2026",
+      "Procore adquiere Datagrid",
+      "Compra la plataforma de IA que conecta planos, ERPs y documentos para ejecutar flujos completos."
+    ],
+    [
+      "Mayo 2026",
+      "Agentes nativos con Actions y Triggers",
+      "RFI, Submittals, Daily Log y Contract Review: agentes que razonan sobre planos y fotos, y ejecutan en la plataforma."
+    ],
+    [
+      "Julio 2026",
+      "Digital Coworkers: 20 agentes",
+      "Biblioteca de 20 agentes listos para licitación, seguridad y calidad. El agente ya es un producto con precio."
+    ]
+  ],
+  "insightLabel": "Por qué te importa",
+  "insight": "Si el líder mundial reorganiza su producto en torno a agentes, la pregunta ya no es si llega, sino cuándo llega a tu obra y con qué datos.",
+  "sourceNote": "Fuentes: Procore (ene–jul 2026) · ENR · Construction Dive"
+}

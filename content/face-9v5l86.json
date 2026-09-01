@@ -1,0 +1,28 @@
+{
+  "sectionLabel": "Conceptos clave · El concepto de 2026",
+  "title": "Chatbot vs Agente",
+  "subtitle": "La diferencia que explica todo lo que viene en esta clase",
+  "chatbotTagline": "Responde preguntas",
+  "agentTagline": "Ejecuta trabajo",
+  "comparisons": [
+    [
+      "Espera tu pregunta y contesta",
+      "Recibe un objetivo y planifica los pasos"
+    ],
+    [
+      "Resume el correo de la ITO",
+      "Redacta la respuesta, adjunta la evidencia y la deja lista para tu aprobación"
+    ],
+    [
+      "Te dice qué falta en el estado de pago",
+      "Junta los respaldos, arma el documento y avisa a quien debe firmar"
+    ],
+    [
+      "Vive en una pestaña aparte",
+      "Usa tus herramientas: correo, planillas, WhatsApp, software de gestión"
+    ]
+  ],
+  "quote": "“Nuestro foco siempre fue construir una IA que ejecute, no que solo hable.”",
+  "quoteAuthor": "Thiago da Costa · Fundador de Datagrid, hoy SVP de IA en Procore",
+  "guardrail": "Clave: el agente no opera solo. Trabaja con permisos definidos, registro auditable y aprobación humana en las decisiones que importan."
+}

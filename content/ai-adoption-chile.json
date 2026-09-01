@@ -1,0 +1,49 @@
+{
+  "title": "Adopción de la Inteligencia Artificial en empresas chilenas",
+  "subtitle": "Un 6% de las empresas encuestadas son del rubro construcción.",
+  "source": "Fuente: Estado de la adopción de inteligencia artificial en empresas chilenas, MAS Analytics (DF), Marzo 2026.",
+  "madurez": [
+    [
+      "42,2%",
+      "En fase de exploración"
+    ],
+    [
+      "28,3%",
+      "En implementación, con iniciativas operativas en proceso de optimización"
+    ],
+    [
+      "25,9%",
+      "En pilotos iniciales, experimentación controlada sin escalamiento"
+    ],
+    [
+      "3,6%",
+      "En escalamiento, con captura efectiva de valor y retornos medibles"
+    ]
+  ],
+  "barreras": [
+    [
+      "34,3%",
+      "Gobierno de datos"
+    ],
+    [
+      "23,5%",
+      "Cultura organizacional y resistencia al cambio"
+    ],
+    [
+      "21,7%",
+      "Dificultades para integrar datos entre áreas"
+    ],
+    [
+      "11,5%",
+      "Identificar casos de uso claros y con retorno justificable"
+    ],
+    [
+      "7,8%",
+      "Falta de talento y capacidades internas"
+    ],
+    [
+      "1,2%",
+      "Presupuesto y recursos limitados"
+    ]
+  ]
+}
