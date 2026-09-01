@@ -24,9 +24,9 @@ Al inicio del `<script>` de `index.html`:
 var WHATSAPP_NUMBER = "";    // 569XXXXXXXX — si está vacío, el botón de WhatsApp se oculta
 ```
 
-El sitio no tiene backend: el formulario valida los 4 campos, registra el payload en
-la consola del navegador (`submitLead()`) y muestra la confirmación inline. Si más
-adelante se quiere persistir los leads, el punto único de cambio es `submitLead()`.
+El sitio no tiene backend ni formulario: el cierre ofrece dos acciones directas,
+"Escribir a Felipe" (mailto) y el botón de WhatsApp click-to-chat (visible solo
+cuando `WHATSAPP_NUMBER` tiene valor).
 
 ## Desarrollo local
 

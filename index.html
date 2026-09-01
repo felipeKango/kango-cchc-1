@@ -232,22 +232,7 @@ section{scroll-margin-top:118px}
 .close-sub{margin-top:12px;color:var(--ink-60);font-size:18px;max-width:36em}
 .next-card{margin-top:24px;border-left:4px solid var(--red)}
 .next-card .chip--red{margin-bottom:10px}
-form{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-form h3{font-size:20px;font-weight:800}
-form .hint{font-size:16px;color:var(--ink-60);margin-top:4px}
-.fields{display:grid;gap:12px;margin-top:18px}
-@media(min-width:680px){.fields{grid-template-columns:1fr 1fr}}
-label{display:block;font-size:16px;font-weight:600}
-label span{display:block;margin-bottom:6px}
-input{
-  width:100%;min-height:48px;padding:12px 14px;font-size:16px;font-family:inherit;
-  border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);
-}
-input:focus{outline:2px solid var(--red);outline-offset:1px;border-color:transparent}
-form .btn{width:100%;margin-top:16px}
-.form-ok{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(15,107,64,.08);border:1px solid rgba(15,107,64,.25);color:var(--green);font-weight:700;font-size:16px}
-.form-err{display:none;margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(192,0,26,.06);border:1px solid rgba(192,0,26,.25);color:var(--red);font-weight:600;font-size:16px}
-.alt-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.alt-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .alt-actions .btn{flex:1 1 220px}
 
 /* ---------- footer ---------- */
@@ -622,22 +607,8 @@ Formato: respuesta en tono profesional, lista numerada, máximo una página. Si 
       <p>Implementación práctica y casos de uso reales.</p>
     </div>
 
-    <form id="leadForm" novalidate>
-      <h3>Quiero seguir aprendiendo</h3>
-      <p class="hint">Déjanos tu contacto y te avisamos por WhatsApp de la próxima clase.</p>
-      <div class="fields">
-        <label><span>Nombre</span><input type="text" name="nombre" id="f-nombre" autocomplete="name" required></label>
-        <label><span>Empresa</span><input type="text" name="empresa" id="f-empresa" autocomplete="organization" required></label>
-        <label><span>Cargo</span><input type="text" name="cargo" id="f-cargo" autocomplete="organization-title" required></label>
-        <label><span>WhatsApp</span><input type="tel" name="whatsapp" id="f-whatsapp" inputmode="tel" autocomplete="tel" placeholder="+56 9 " required></label>
-      </div>
-      <button class="btn btn--red" type="submit" id="submitBtn">Av&iacute;senme de la pr&oacute;xima clase</button>
-      <p class="form-ok" id="formOk">Listo, te avisamos por WhatsApp</p>
-      <p class="form-err" id="formErr">No pudimos guardar tus datos. Int&eacute;ntalo de nuevo o escr&iacute;benos directo.</p>
-    </form>
-
     <div class="alt-actions">
-      <a class="btn btn--ghost" href="mailto:felipe@getkango.com?subject=Clase%20CChC%20-%20Vibe%20%26%20Build">Escribir a Felipe</a>
+      <a class="btn btn--red" href="mailto:felipe@getkango.com?subject=Clase%20CChC%20-%20Vibe%20%26%20Build">Escribir a Felipe</a>
       <a class="btn btn--ghost" id="waBtn" href="#" hidden>Hablar por WhatsApp</a>
     </div>
   </div>
@@ -733,70 +704,6 @@ var WHATSAPP_NUMBER = "";       // p.ej. 569XXXXXXXX (solo dígitos)
   });
 })();
 
-/* ---------- Envío de leads ---------- */
-function getUtmSource() {
-  try {
-    return new URLSearchParams(window.location.search).get("utm_source") || null;
-  } catch (e) { return null; }
-}
-
-function submitLead(payload) {
-  console.log("lead:", JSON.stringify(payload));
-  return Promise.resolve({ ok: true });
-}
-
-(function () {
-  var form = document.getElementById("leadForm");
-  var okMsg = document.getElementById("formOk");
-  var errMsg = document.getElementById("formErr");
-  var btn = document.getElementById("submitBtn");
-
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    okMsg.style.display = "none";
-    errMsg.style.display = "none";
-
-    var nombre = document.getElementById("f-nombre").value.trim();
-    var empresa = document.getElementById("f-empresa").value.trim();
-    var cargo = document.getElementById("f-cargo").value.trim();
-    var whatsapp = document.getElementById("f-whatsapp").value.trim();
-
-    if (!nombre || !empresa || !cargo || !whatsapp) {
-      errMsg.textContent = "Completa los 4 campos para que podamos avisarte.";
-      errMsg.style.display = "block";
-      return;
-    }
-    if (whatsapp.replace(/\D/g, "").length < 8) {
-      errMsg.textContent = "Revisa el número de WhatsApp: parece incompleto.";
-      errMsg.style.display = "block";
-      return;
-    }
-
-    var payload = {
-      nombre: nombre,
-      empresa: empresa,
-      cargo: cargo,
-      whatsapp: whatsapp,
-      fuente: "cchc_clase_1",
-      user_agent: navigator.userAgent || null,
-      utm_source: getUtmSource()
-    };
-
-    btn.disabled = true;
-    btn.textContent = "Enviando...";
-    submitLead(payload).then(function () {
-      form.querySelector(".fields").hidden = true;
-      btn.hidden = true;
-      okMsg.style.display = "block";
-    }).catch(function (err) {
-      console.error("submitLead error:", err);
-      errMsg.textContent = "No pudimos guardar tus datos. Inténtalo de nuevo o escríbenos directo.";
-      errMsg.style.display = "block";
-      btn.disabled = false;
-      btn.textContent = "Avísenme de la próxima clase";
-    });
-  });
-})();
 </script>
 </body>
 </html>
