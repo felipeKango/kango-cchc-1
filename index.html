@@ -657,11 +657,8 @@ Formato: respuesta en tono profesional, lista numerada, máximo una página. Si 
 
 <script>
 /* ============================================================
-   Configuración pública (inyectar valores reales antes del deploy)
+   Configuración pública (inyectar valor real antes del deploy)
    ============================================================ */
-var MOCK_MODE = true;
-var SUPABASE_URL = "";          // p.ej. https://xxxx.supabase.co
-var SUPABASE_ANON_KEY = "";     // anon key (pública por diseño)
 var WHATSAPP_NUMBER = "";       // p.ej. 569XXXXXXXX (solo dígitos)
 
 /* ---------- WhatsApp click-to-chat ---------- */
@@ -744,23 +741,8 @@ function getUtmSource() {
 }
 
 function submitLead(payload) {
-  if (MOCK_MODE || !SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    console.log("[MOCK_MODE] lead:", JSON.stringify(payload));
-    return Promise.resolve({ ok: true, mock: true });
-  }
-  return fetch(SUPABASE_URL + "/rest/v1/cchc_leads", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": SUPABASE_ANON_KEY,
-      "Authorization": "Bearer " + SUPABASE_ANON_KEY,
-      "Prefer": "return=minimal"
-    },
-    body: JSON.stringify(payload)
-  }).then(function (res) {
-    if (!res.ok) { throw new Error("Supabase " + res.status); }
-    return { ok: true };
-  });
+  console.log("lead:", JSON.stringify(payload));
+  return Promise.resolve({ ok: true });
 }
 
 (function () {

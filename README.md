@@ -2,7 +2,7 @@
 
 Sitio estático de una página que resume la **Clase #1 "IA para la construcción en Chile"** de KangoLab para socios CChC.
 
-- **Stack:** HTML + CSS + JS vanilla en un solo `index.html` (excepción explícita al stack canónico; ver PRD §8).
+- **Stack:** HTML + CSS + JS vanilla en un solo `index.html`, sin backend (excepción explícita al stack canónico; ver PRD §8).
 - **URL objetivo:** https://kangocchc-1.vercel.app
 
 ## Estructura
@@ -16,39 +16,17 @@ content/*.json      Contenido textual extraído del deck Faces h1tkw3pi (fuente 
 vercel.json         Headers de cache para /public
 ```
 
-## Configuración (constantes públicas en `index.html`)
+## Configuración (constante pública en `index.html`)
 
 Al inicio del `<script>` de `index.html`:
 
 ```js
-var MOCK_MODE = true;        // true: el submit solo hace console.log y muestra confirmación
-var SUPABASE_URL = "";       // https://xxxx.supabase.co
-var SUPABASE_ANON_KEY = "";  // anon key (pública por diseño; RLS solo permite INSERT)
 var WHATSAPP_NUMBER = "";    // 569XXXXXXXX — si está vacío, el botón de WhatsApp se oculta
 ```
 
-Para pasar a producción: `MOCK_MODE = false` y completar las tres constantes.
-El switch de envío vive en **una sola función**: `submitLead()`.
-
-### Tabla Supabase
-
-```sql
-create table cchc_leads (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz default now(),
-  nombre text not null,
-  empresa text not null,
-  cargo text not null,
-  whatsapp text not null,
-  fuente text default 'cchc_clase_1',
-  user_agent text,
-  utm_source text
-);
-alter table cchc_leads enable row level security;
-create policy "anon insert only" on cchc_leads
-  for insert to anon with check (true);
--- Sin política de select para anon: el formulario escribe, nadie lee desde el cliente.
-```
+El sitio no tiene backend: el formulario valida los 4 campos, registra el payload en
+la consola del navegador (`submitLead()`) y muestra la confirmación inline. Si más
+adelante se quiere persistir los leads, el punto único de cambio es `submitLead()`.
 
 ## Desarrollo local
 
